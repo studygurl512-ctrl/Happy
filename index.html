@@ -424,11 +424,12 @@ function resumeMusicAfterVideo() {
           <h2>Hug 🤍</h2>
           <p>This is your quiet safe moment. Stay here as long as you need.</p>
           <video class="gift-media" controls 
-  onplay="pauseMusicForVideo()" 
-  onended="resumeMusicAfterVideo()">
-  <source src="Hug.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+      onplay="pauseMusicForVideo()" 
+      onpause="resumeMusicAfterVideo()" 
+      onended="resumeMusicAfterVideo()">
+      <source src="Hug.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
         `;
       }
 
@@ -437,11 +438,12 @@ function resumeMusicAfterVideo() {
           <h2>Fluffy Meow 🐱</h2>
           <p>This is your emotional support cat. It believes in you.</p>
           <video class="gift-media" controls 
-  onplay="pauseMusicForVideo()" 
-  onended="resumeMusicAfterVideo()">
-  <source src="Fluffy Meow.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+      onplay="pauseMusicForVideo()" 
+      onpause="resumeMusicAfterVideo()" 
+      onended="resumeMusicAfterVideo()">
+      <source src="Fluffy Meow.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
         `;
       }
 
