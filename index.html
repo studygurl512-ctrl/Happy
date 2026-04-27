@@ -398,7 +398,24 @@
       player.currentTime = 0;
       document.getElementById("nowPlaying").innerText = "Music stopped ⏸";
     }
+let wasMusicPlaying = false;
 
+function pauseMusicForVideo() {
+  const music = document.getElementById("musicPlayer");
+  wasMusicPlaying = !music.paused;
+
+  if (wasMusicPlaying) {
+    music.pause();
+  }
+}
+
+function resumeMusicAfterVideo() {
+  const music = document.getElementById("musicPlayer");
+
+  if (wasMusicPlaying) {
+    music.play();
+  }
+}
     function openGift(type) {
       const giftContent = document.getElementById("giftContent");
 
@@ -406,10 +423,12 @@
         giftContent.innerHTML = `
           <h2>Hug 🤍</h2>
           <p>This is your quiet safe moment. Stay here as long as you need.</p>
-          <video class="gift-media" controls>
-            <source src="Hug.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+          <video class="gift-media" controls 
+  onplay="pauseMusicForVideo()" 
+  onended="resumeMusicAfterVideo()">
+  <source src="Hug.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
         `;
       }
 
@@ -417,10 +436,12 @@
         giftContent.innerHTML = `
           <h2>Fluffy Meow 🐱</h2>
           <p>This is your emotional support cat. It believes in you.</p>
-          <video class="gift-media" controls>
-            <source src="Fluffy Meow.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+          <video class="gift-media" controls 
+  onplay="pauseMusicForVideo()" 
+  onended="resumeMusicAfterVideo()">
+  <source src="Fluffy Meow.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
         `;
       }
 
